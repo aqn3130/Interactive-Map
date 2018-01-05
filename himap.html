@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+img{
+    position:fixed;
+    left:100px;
+}
+</style>
+</head>
+<body>
+
+<img src="https://hive.springernature.com/resources/statics/356647/worldMap.jpg?a=1515099960442" alt="" usemap="#Map"/>
+<map name="Map" id="Map">
+    <area id="ca" shape="circle" alt="" title="Canada" coords="112,174,55" href="#" target="" />
+    <area id="usa" shape="circle" alt="" title="USA" coords="191,240,46" href="#" target="" />
+    <area id="sa" shape="circle" alt="" title="South America" coords="252,394,55" href="#" target="" />
+    <area id="af" shape="circle" alt="" title="Africa" coords="410,330,55" href="#" target="" />
+    <area id="za" shape="circle" alt="" title="South Africa" coords="410,400,55" href="#" target="" />
+    <area id="uk" shape="circle" alt="" title="UK" coords="380,190,25" href="#" target="" />
+    <area id="de" shape="circle" alt="" title="DE" coords="420,190,25" href="#" target="" />
+    <area id="es" shape="circle" alt="" title="ES" coords="350,220,25" href="#" target="" />
+    <area id="eu" shape="circle" alt="" title="Europe" coords="476,190,45" href="#" target="" />
+    <area id="ru" shape="circle" alt="" title="Russia" coords="610,200,75" href="#" target="" />
+    <area id="cn" shape="circle" alt="" title="China" coords="496,257,55" href="#" target="" />
+    <area id="in" shape="circle" alt="" title="India" coords="541,301,55" href="#" target="" />
+    <area id="jp" shape="circle" alt="" title="Japan" coords="681,248,35" href="#" target="" />
+    <area id="au" shape="circle" alt="" title="Australia" coords="673,422,55" href="#" target="" />
+</map>
+
+
+<!-- The modal_canada -->
+<div id="canada" class="modal">
+    <!-- modal_canada content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>Canada</h4>
+        <p>Canada Rep</p>
+    </div>
+</div>
+
+<div id="usam" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>USA</h4>
+        <p>USA Rep</p>
+    </div>
+</div>
+
+<div id="sam" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>South America</h4>
+        <p>South America Rep</p>
+    </div>
+</div>
+
+<div id="afm" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>Africa</h4>
+        <p>Africa Rep</p>
+    </div>
+</div>
+
+<div id="zam" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>South Africa</h4>
+        <p>South Africa Rep</p>
+    </div>
+</div>
+
+<div id="ukm" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>United Kingdom</h4>
+        <p>UK Rep</p>
+    </div>
+</div>
+
+<div id="dem" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>Germany</h4>
+        <p>Germany Rep</p>
+    </div>
+</div>
+
+<div id="esm" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>Spain</h4>
+        <p>Spain Rep</p>
+    </div>
+</div>
+
+<script>
+// Get the modal_canada
+var modal_canada = document.getElementById('canada');
+
+// Get the button that opens the modal_canada
+var btn_canada = document.getElementById("ca");
+
+// Get the <span> element that closes the modal_canada
+var span_canada = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal_canada 
+btn_canada.onclick = function() {
+    modal_canada.style.display = "block";
+    if(modal_usa.display!="none"){
+        modal_usa.style.display="none";
+    }
+}
+
+// When the user clicks on <span> (x), close the modal_canada
+span_canada.onclick = function() {
+    modal_canada.style.display = "none";
+}
+
+
+// Get the modal_usa
+var modal_usa = document.getElementById('usam');
+
+// Get the button that opens the modal_usa
+var btn_usa = document.getElementById("usa");
+
+// Get the <span> element that closes the modal_usa
+var span_usa = document.getElementsByClassName("close")[1];
+
+// When the user clicks the button, open the modal_usa 
+btn_usa.onclick = function() {
+    modal_usa.style.display = "block";
+    if(modal_canada.display!="none"){
+        modal_canada.style.display="none";
+    }
+}
+
+// When the user clicks on <span> (x), close the modal_usa
+span_usa.onclick = function() {
+    modal_usa.style.display = "none";
+}
+
+// Get the modal_South Africa
+var modal_sa = document.getElementById('sam');
+
+// Get the button that opens the modal_usa
+var btn_sa = document.getElementById("sa");
+
+// Get the <span> element that closes the modal_usa
+var span_sa = document.getElementsByClassName("close")[2];
+
+// When the user clicks the button, open the modal_usa 
+btn_sa.onclick = function() {
+    modal_sa.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal_usa
+span_sa.onclick = function() {
+    modal_sa.style.display = "none";
+}
+
+// Get the modal_Africa
+var modal_af = document.getElementById('afm');
+// Get the button that opens the modal_usa
+var btn_af = document.getElementById("af");
+// Get the <span> element that closes the modal_usa
+var span_af = document.getElementsByClassName("close")[3];
+// When the user clicks the button, open the modal_usa 
+btn_af.onclick = function() {
+    modal_af.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal_usa
+span_af.onclick = function() {
+    modal_af.style.display = "none";
+}
+
+// Get the modal_South Africa
+var modal_za = document.getElementById('zam');
+// Get the button that opens the modal_usa
+var btn_za = document.getElementById("za");
+// Get the <span> element that closes the modal_usa
+var span_za = document.getElementsByClassName("close")[4];
+// When the user clicks the button, open the modal_usa 
+btn_za.onclick = function() {
+    modal_za.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal_usa
+span_za.onclick = function() {
+    modal_za.style.display = "none";
+}
+
+// Get the modal_UK
+var modal_uk = document.getElementById('ukm');
+// Get the button that opens the modal_usa
+var btn_uk = document.getElementById("uk");
+// Get the <span> element that closes the modal_usa
+var span_uk = document.getElementsByClassName("close")[5];
+// When the user clicks the button, open the modal_usa 
+btn_uk.onclick = function() {
+    modal_uk.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal_usa
+span_uk.onclick = function() {
+    modal_uk.style.display = "none";
+}
+
+// Get the modal_DE
+var modal_de = document.getElementById('dem');
+// Get the button that opens the modal_usa
+var btn_de = document.getElementById("de");
+// Get the <span> element that closes the modal_usa
+var span_de = document.getElementsByClassName("close")[6];
+// When the user clicks the button, open the modal_usa 
+btn_de.onclick = function() {
+    modal_de.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal_usa
+span_de.onclick = function() {
+    modal_de.style.display = "none";
+}
+
+// Get the modal_ES
+var modal_es = document.getElementById('esm');
+// Get the button that opens the modal_usa
+var btn_es = document.getElementById("es");
+// Get the <span> element that closes the modal_usa
+var span_es = document.getElementsByClassName("close")[7];
+// When the user clicks the button, open the modal_usa 
+btn_es.onclick = function() {
+    modal_es.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal_usa
+span_es.onclick = function() {
+    modal_es.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal_canada, close it
+window.onclick = function(event) {
+    if (event.target == modal_canada) {
+        modal_canada.style.display = "none";
+    }
+    if (event.target == modal_usa) {
+        modal_usa.style.display = "none";
+    }
+    if (event.target == modal_sa) {
+        modal_sa.style.display = "none";
+    }
+    if (event.target == modal_af) {
+        modal_af.style.display = "none";
+    }
+    if (event.target == modal_za) {
+        modal_za.style.display = "none";
+    }
+    if (event.target == modal_uk) {
+        modal_uk.style.display = "none";
+    }
+    if (event.target == modal_de) {
+        modal_de.style.display = "none";
+    }
+    if (event.target == modal_es) {
+        modal_es.style.display = "none";
+    }
+}
+
+</script>
+
+</body>
+</html>
