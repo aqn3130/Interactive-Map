@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+    
 <style>
 /* The Modal (background) */
 .modal {
@@ -16,7 +23,6 @@
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
 /* Modal Content */
 .modal-content {
     background-color: #fefefe;
@@ -25,7 +31,6 @@
     border: 1px solid #888;
     width: 30%;
 }
-
 /* The Close Button */
 .close {
     color: #aaaaaa;
@@ -33,7 +38,6 @@
     font-size: 28px;
     font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
     color: #000;
@@ -44,28 +48,143 @@ img{
     position:fixed;
     left:100px;
 }
+
+/* Base styling*/
+/* body {
+  background-color: lightgrey;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1em 0;
+} */
+
+/* Popover styling */
+
+a {
+  text-decoration: none;
+}
+
+.popover__title {
+  font-family: Myriad,Verdana,Arial; /*'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+  font-size: 14px;
+  line-height: 12px;
+  text-decoration: none;
+  color: rgb(228, 68, 68);
+  text-align: center;
+  padding: 15px 0;
+}
+
+.popover__wrapper {
+    position: relative;
+    margin-top: 1.5rem;
+    display: inline-block;
+    width:auto;
+}
+.popover__content {
+    /* opacity: 0.5;
+    visibility: hidden;
+    position: absolute; 
+    left: -150px;
+    transform: translate(0,100px);
+    background-color:#BFBFBF;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    width: auto;  */
+
+    opacity: 0.5;
+    visibility: hidden;
+    position: relative; 
+    left: -150px;
+    transform: translate(0,100px);
+    background-color:#BFBFBF;
+    padding: 2.9rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    width: auto;
+	height: auto;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+}
+.popover__content:before {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    /* right: calc(50% - 10px);
+    top: -8px; */
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #BFBFBF transparent;
+    transition-duration: 0.3s;
+    transition-property: transform;
+
+    
+}
+.popover__wrapper:hover .popover__content {
+    z-index: 10;
+    opacity: 0.9;
+    visibility: visible;
+    transform: translate(0,-20px);
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+    
+}
+.popover__message {
+    text-align: center;
+    font-family:Myriad,Verdana,Arial;
+    font-size:12px;
+    
+}
+.list{
+
+    width:auto;
+    font-family:Myriad,Verdana,Arial;
+    font-size:12px;
+    display:inline;
+    list-style-position: inside;
+    list-style-type: square;
+   
+    /* background: #3399ff; */
+    
+}
+
+
 </style>
 </head>
 <body>
-
 <img src="https://hive.springernature.com/resources/statics/356647/worldMap.jpg?a=1515099960442" alt="" usemap="#Map"/>
-<map name="Map" id="Map">
-    <area id="ca" shape="circle" alt="" title="Canada" coords="112,174,55" href="#" target="" />
-    <area id="usa" shape="circle" alt="" title="USA" coords="191,240,46" href="#" target="" />
-    <area id="sa" shape="circle" alt="" title="South America" coords="252,394,55" href="#" target="" />
-    <area id="af" shape="circle" alt="" title="Africa" coords="410,330,55" href="#" target="" />
-    <area id="za" shape="circle" alt="" title="South Africa" coords="410,400,55" href="#" target="" />
-    <area id="uk" shape="circle" alt="" title="UK" coords="380,190,25" href="#" target="" />
-    <area id="de" shape="circle" alt="" title="DE" coords="420,190,25" href="#" target="" />
-    <area id="es" shape="circle" alt="" title="ES" coords="350,220,25" href="#" target="" />
-    <area id="eu" shape="circle" alt="" title="Europe" coords="476,190,45" href="#" target="" />
-    <area id="ru" shape="circle" alt="" title="Russia" coords="610,200,75" href="#" target="" />
-    <area id="cn" shape="circle" alt="" title="China" coords="496,257,55" href="#" target="" />
-    <area id="in" shape="circle" alt="" title="India" coords="541,301,55" href="#" target="" />
-    <area id="jp" shape="circle" alt="" title="Japan" coords="681,248,35" href="#" target="" />
-    <area id="au" shape="circle" alt="" title="Australia" coords="673,422,55" href="#" target="" />
-</map>
+<map name="Map" id="Map" class="parent">
+    <area id="ca" shape="circle" alt="" data-toggle="popover" title="Canada" coords="112,174,55" href="#" target=""/> 
+    <area id="usa" shape="circle" alt="" data-toggle="popover" title="USA" coords="191,240,46" href="#" target="" />
+    <area id="latam" shape="circle" alt="" data-toggle="popover" title="LATAM - Mexico, Pero, Colombia and CASA Territories" coords="210,350,90" href="#" target="" />
+    <area id="sa" shape="circle" alt="" data-toggle="popover" title="South America" coords="250,470,65" href="#" target="" />
+    <area id="af" shape="circle" alt="" data-toggle="popover" title="Africa" coords="410,330,55" href="#" target="" />
+    <area id="za" shape="circle" alt="" data-toggle="popover" title="South Africa" coords="410,400,55" href="#" target="" />
+    <area id="uk" shape="circle" alt="" data-toggle="popover" title="UK" coords="380,190,25" href="#" target="" />
+    <area id="de" shape="circle" alt="" data-toggle="popover" title="DE" coords="420,190,25" href="#" target="" />
+    <area id="es" shape="circle" alt="" data-toggle="popover" title="ES" coords="350,220,25" href="#" target="" />
+    <area id="eu" shape="circle" alt="" data-toggle="popover" title="Europe" coords="476,190,45" href="#" target="" />
+    <area id="ru" shape="circle" alt="" data-toggle="popover" title="Russia" coords="610,200,75" href="#" target="" />
+    <area id="cn" shape="circle" alt="" data-toggle="popover" title="China" coords="496,257,55" href="#" target="" />
+    <area id="in" shape="circle" alt="" data-toggle="popover" title="India" coords="541,301,55" href="#" target="" />
+    <area id="jp" shape="circle" alt="" data-toggle="popover" title="Japan" coords="681,248,35" href="#" target="" />
+    <!-- <area id="au" shape="circle" alt="" data-toggle="popover" title="Australia" coords="673,422,55" href="#" target="" /> -->
 
+    <div class="popover__wrapper" style="left:783px;top:250px;">
+        <a href="#" class="popover__title"><area id="au" shape="circle" alt="" coords="673,422,55" href="#" target="" />
+        </a>
+        <div class="push popover__content">
+          <p class="popover__message">SEA and China<hr></p>
+            <ul class="list">
+            <li><a href="https://hive.springernature.com/people/arnout.jacobs@nature.com" target="_blank">Arnout Jacobs</a></li>
+            <li>Bee Leng Chua</li>
+            <li>Emma Bourne</li>
+            <li>Jessica Zheng</li>
+            <li>Cedric Noeliac</li>
+            <li>Maurice Kwong</li>
+            </ul>
+          
+        </div>
+      </div>
+
+</map>
 
 <!-- The modal_canada -->
 <div id="canada" class="modal">
@@ -136,13 +255,10 @@ img{
 <script>
 // Get the modal_canada
 var modal_canada = document.getElementById('canada');
-
 // Get the button that opens the modal_canada
 var btn_canada = document.getElementById("ca");
-
 // Get the <span> element that closes the modal_canada
 var span_canada = document.getElementsByClassName("close")[0];
-
 // When the user clicks the button, open the modal_canada 
 btn_canada.onclick = function() {
     modal_canada.style.display = "block";
@@ -150,22 +266,26 @@ btn_canada.onclick = function() {
         modal_usa.style.display="none";
     }
 }
-
 // When the user clicks on <span> (x), close the modal_canada
 span_canada.onclick = function() {
     modal_canada.style.display = "none";
 }
 
+// $(document).ready(function() {
+//   $('[data-toggle="popover"]').popover({
+//     placement: 'right',
+//     trigger: 'hover',
+//     width: '500px',
+//     content:'Click region for contact information'
+//   });
+// });
 
 // Get the modal_usa
 var modal_usa = document.getElementById('usam');
-
 // Get the button that opens the modal_usa
 var btn_usa = document.getElementById("usa");
-
 // Get the <span> element that closes the modal_usa
 var span_usa = document.getElementsByClassName("close")[1];
-
 // When the user clicks the button, open the modal_usa 
 btn_usa.onclick = function() {
     modal_usa.style.display = "block";
@@ -174,20 +294,17 @@ btn_usa.onclick = function() {
     }
 }
 
+
 // When the user clicks on <span> (x), close the modal_usa
 span_usa.onclick = function() {
     modal_usa.style.display = "none";
 }
-
 // Get the modal_South Africa
 var modal_sa = document.getElementById('sam');
-
 // Get the button that opens the modal_usa
 var btn_sa = document.getElementById("sa");
-
 // Get the <span> element that closes the modal_usa
 var span_sa = document.getElementsByClassName("close")[2];
-
 // When the user clicks the button, open the modal_usa 
 btn_sa.onclick = function() {
     modal_sa.style.display = "block";
@@ -272,7 +389,7 @@ span_es.onclick = function() {
     modal_es.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal_canada, close it
+// // When the user clicks anywhere outside of the modal_canada, close it
 window.onclick = function(event) {
     if (event.target == modal_canada) {
         modal_canada.style.display = "none";
@@ -299,6 +416,7 @@ window.onclick = function(event) {
         modal_es.style.display = "none";
     }
 }
+
 
 </script>
 

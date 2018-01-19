@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+img{
+    /* position:fixed;
+    left:50px; */
+    position: relative;
+}
+</style>
+</head>
+<body>
+
+<img src="https://hive.springernature.com/resources/statics/356647/hive_interactive_map.png?a=1515511724393" alt="Hive Interactive Map" usemap="#Map" id="map_Id"/>
+<map name="Map" id="Map">
+    <area id = "ca" alt="" title="Canada" href="#" shape="poly" coords="82,232,83,300,130,353,299,368,330,358,215,91" />
+    <area id = "usa" alt="" title="USA" href="#" shape="poly" coords="131,355,151,413,205,435,249,422,330,360" />
+    <area id = "me" alt="" title="Mexico" href="#" shape="poly" coords="151,416,165,419,180,419,190,426,204,436,208,444,201,449,206,457,221,462,225,468,222,470,220,473,207,468,195,464,184,457" />
+    <area id = "co" alt="" title="Colombia" href="#" shape="poly" coords="264,486,262,507,284,520,290,497,277,479" />
+    <area id = "ec" alt="" title="Ecuador" href="#" shape="poly" coords="254,509,271,518,262,529,252,526" />
+    <area id = "pe" alt="" title="Pero" href="#" shape="poly" coords="283,564,264,555,253,529,271,520,284,522" />
+    <area id = "br" alt="" title="Brazil" href="#" shape="poly" coords="383,527,338,504,288,522,314,558,340,606" />
+    <area id = "bo" alt="" title="Bolivia" href="#" shape="poly" coords="287,544,297,541,313,559,318,570,310,571,304,575,291,579,284,565" />
+    <area id = "ch" alt="" title="Chile" href="#" shape="poly" coords="283,566,293,580,283,607,273,664,273,679" />
+    <area id = "ar" alt="" title="Argentina" href="#" shape="poly" coords="290,581,302,579,318,587,319,594,319,607,315,630,306,639,300,646,294,656,289,661,296,667,294,677,285,687,279,683" />
+    <area id = "pa" alt="" title="Paraguay" href="#" shape="poly" coords="306,577,317,573,328,587,321,593" />
+    <area id = "ur" alt="" title="Uruguay" href="#" shape="poly" coords="331,592,317,605,327,623,343,612" />
+    <area id = "ve" alt="" title="Venezuela" href="#" shape="poly" coords="280,482,309,482,313,496,295,508" />
+    <area id = "gu" alt="" title="Guyana" href="#" shape="poly" coords="310,488,310,497,315,506,322,507,320,495" />
+    <area id = "su" alt="" title="Surename" href="#" shape="poly" coords="330,497,329,505,324,508,319,501,322,495" />
+    <area id = "fg" alt="" title="French Guiana" href="#" shape="poly" coords="330,497,336,501,334,507,330,506" />
+    <area id = "ga" alt="" title="Guatemala" href="#" shape="poly" coords="228,475,232,468,230,460,223,466,221,472" />
+    <area id = "ho" alt="" title="Honduras" href="#" shape="poly" coords="245,469,236,475,231,472,236,465" />
+    <area id = "ni" alt="" title="Nicaragua" href="#" shape="poly" coords="248,481,249,471,236,477" />
+    <area id = "cs" alt="Costa Rica" title="" href="#" shape="poly" coords="240,483,248,483,248,490" />
+    <area id = "pn" alt="Panama" title="" href="#" shape="poly" coords="249,485,262,491,262,496,248,490" />
+    
+</map>
+
+
+<!-- The modal_canada -->
+<div id="canada" class="modal">
+    <!-- modal_canada content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>Canada</h4>
+        <p>Canada Rep</p>
+    </div>
+</div>
+
+<div id="usam" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>USA</h4>
+        <p>USA Rep</p>
+    </div>
+</div>
+
+<div id="mem" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>Mexico</h4>
+        <p>Mexico Rep</p>
+    </div>
+</div>
+
+<div id="afm" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>Africa</h4>
+        <p>Africa Rep</p>
+    </div>
+</div>
+
+<div id="zam" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>South Africa</h4>
+        <p>South Africa Rep</p>
+    </div>
+</div>
+
+<div id="ukm" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>United Kingdom</h4>
+        <p>UK Rep</p>
+    </div>
+</div>
+
+<div id="dem" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>Germany</h4>
+        <p>Germany Rep</p>
+    </div>
+</div>
+
+<div id="esm" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>Spain</h4>
+        <p>Spain Rep</p>
+    </div>
+</div>
+
+<div id="brm" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>Brazil</h4>
+        <p>Brazil Rep</p>
+    </div>
+</div>
+
+<script>
+// // Get the modal_canada
+// var modal_canada = document.getElementById('canada');
+// // Get the button that opens the modal_canada
+// var btn_canada = document.getElementById("ca");
+// // Get the <span> element that closes the modal_canada
+// var span_canada = document.getElementsByClassName("close")[0];
+// // When the user clicks the button, open the modal_canada 
+// btn_canada.onclick = function() {
+//     modal_canada.style.display = "block";
+//     if(modal_usa.display!="none"){
+//         modal_usa.style.display="none";
+//     }
+// }
+// // When the user clicks on <span> (x), close the modal_canada
+// span_canada.onclick = function() {
+//     modal_canada.style.display = "none";
+// }
+
+
+// // Get the modal_usa
+// var modal_usa = document.getElementById('usam');
+
+// // Get the button that opens the modal_usa
+// var btn_usa = document.getElementById("usa");
+
+// // Get the <span> element that closes the modal_usa
+// var span_usa = document.getElementsByClassName("close")[1];
+
+// // When the user clicks the button, open the modal_usa 
+// btn_usa.onclick = function() {
+//     modal_usa.style.display = "block";
+//     if(modal_canada.display!="none"){
+//         modal_canada.style.display="none";
+//     }
+// }
+
+// // When the user clicks on <span> (x), close the modal_usa
+// span_usa.onclick = function() {
+//     modal_usa.style.display = "none";
+// }
+
+// // Get the modal_South Africa
+// var modal_sa = document.getElementById('sam');
+// // Get the button that opens the modal_usa
+// var btn_sa = document.getElementById("sa");
+// // Get the <span> element that closes the modal_usa
+// var span_sa = document.getElementsByClassName("close")[2];
+// // When the user clicks the button, open the modal_usa 
+// btn_sa.onclick = function() {
+//     modal_sa.style.display = "block";
+// }
+// // When the user clicks on <span> (x), close the modal_usa
+// span_sa.onclick = function() {
+//     modal_sa.style.display = "none";
+// }
+
+// // Get the modal_Africa
+// var modal_af = document.getElementById('afm');
+// // Get the button that opens the modal_usa
+// var btn_af = document.getElementById("af");
+// // Get the <span> element that closes the modal_usa
+// var span_af = document.getElementsByClassName("close")[3];
+// // When the user clicks the button, open the modal_usa 
+// btn_af.onclick = function() {
+//     modal_af.style.display = "block";
+// }
+// // When the user clicks on <span> (x), close the modal_usa
+// span_af.onclick = function() {
+//     modal_af.style.display = "none";
+// }
+
+// // Get the modal_South Africa
+// var modal_za = document.getElementById('zam');
+// // Get the button that opens the modal_usa
+// var btn_za = document.getElementById("za");
+// // Get the <span> element that closes the modal_usa
+// var span_za = document.getElementsByClassName("close")[4];
+// // When the user clicks the button, open the modal_usa 
+// btn_za.onclick = function() {
+//     modal_za.style.display = "block";
+// }
+// // When the user clicks on <span> (x), close the modal_usa
+// span_za.onclick = function() {
+//     modal_za.style.display = "none";
+// }
+
+// // Get the modal_UK
+// var modal_uk = document.getElementById('ukm');
+// // Get the button that opens the modal_usa
+// var btn_uk = document.getElementById("uk");
+// // Get the <span> element that closes the modal_usa
+// var span_uk = document.getElementsByClassName("close")[5];
+// // When the user clicks the button, open the modal_usa 
+// btn_uk.onclick = function() {
+//     modal_uk.style.display = "block";
+// }
+// // When the user clicks on <span> (x), close the modal_usa
+// span_uk.onclick = function() {
+//     modal_uk.style.display = "none";
+// }
+
+// // Get the modal_DE
+// var modal_de = document.getElementById('dem');
+// // Get the button that opens the modal_usa
+// var btn_de = document.getElementById("de");
+// // Get the <span> element that closes the modal_usa
+// var span_de = document.getElementsByClassName("close")[6];
+// // When the user clicks the button, open the modal_usa 
+// btn_de.onclick = function() {
+//     modal_de.style.display = "block";
+// }
+// // When the user clicks on <span> (x), close the modal_usa
+// span_de.onclick = function() {
+//     modal_de.style.display = "none";
+// }
+
+// // Get the modal_ES
+// var modal_es = document.getElementById('esm');
+// // Get the button that opens the modal_usa
+// var btn_es = document.getElementById("es");
+// // Get the <span> element that closes the modal_usa
+// var span_es = document.getElementsByClassName("close")[7];
+// // When the user clicks the button, open the modal_usa 
+// btn_es.onclick = function() {
+//     modal_es.style.display = "block";
+// }
+// // When the user clicks on <span> (x), close the modal_usa
+// span_es.onclick = function() {
+//     modal_es.style.display = "none";
+// }
+
+// Get the modal_BR
+var modal_br = document.getElementById('brm');
+// Get the button that opens the modal_usa
+var btn_br = document.getElementById("br");
+// Get the <span> element that closes the modal_usa
+var span_br = document.getElementsByClassName("close")[8];
+// When the user clicks the button, open the modal_usa 
+btn_br.onclick = function() {
+    // modal_br.style.display = "block";
+    var image = document.getElementById("map_Id");
+    image.src = "https://hive.springernature.com/resources/statics/356647/Br3.png?a=1515530911479";
+    image.style = "width:80%;height:80%";
+
+}
+// When the user clicks on <span> (x), close the modal_usa
+span_br.onclick = function() {
+    modal_br.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal_canada, close it
+// window.onclick = function(event) {
+//     if (event.target == modal_canada) {
+//         modal_canada.style.display = "none";
+//     }
+//     if (event.target == modal_usa) {
+//         modal_usa.style.display = "none";
+//     }
+//     if (event.target == modal_sa) {
+//         modal_sa.style.display = "none";
+//     }
+//     if (event.target == modal_af) {
+//         modal_af.style.display = "none";
+//     }
+//     if (event.target == modal_za) {
+//         modal_za.style.display = "none";
+//     }
+//     if (event.target == modal_uk) {
+//         modal_uk.style.display = "none";
+//     }
+//     if (event.target == modal_de) {
+//         modal_de.style.display = "none";
+//     }
+//     if (event.target == modal_es) {
+//         modal_es.style.display = "none";
+//     }
+//     if (event.target == modal_br) {
+//         modal_br.style.display = "none";
+//     }
+// }
+
+</script>
+
+</body>
+</html>
