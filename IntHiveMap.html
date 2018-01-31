@@ -49,7 +49,7 @@ img{
 </head>
 <body>
 
-<img src="https://hive.springernature.com/resources/statics/356647/hive_interactive_map.png?a=1515511724393" alt="Hive Interactive Map" usemap="#Map" id="map_Id"/>
+<img src="https://hive.springernature.com/resources/statics/356647/hive_interactive_map.png?a=1515511724393" alt="Hive Interactive Map" usemap="#Map" id="map_Id" width="100%"/>
 <map name="Map" id="Map">
     <area id = "ca" alt="" title="Canada" href="#" shape="poly" coords="82,232,83,300,130,353,299,368,330,358,215,91" />
     <area id = "usa" alt="" title="USA" href="#" shape="poly" coords="131,355,151,413,205,435,249,422,330,360" />
@@ -333,6 +333,13 @@ span_br.onclick = function() {
 // }
 
 </script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="imageMapResizer.min.js"></script>
+<script type="text/javascript">
 
+    // $('map').imageMapResize();
+    imageMapResize();
+</script>
 </body>
 </html>

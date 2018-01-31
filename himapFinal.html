@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="imageMapResizer.min.js"></script>
+
+<style>
+img{
+    position: fixed;
+    /* left: 100px; */
+    /* margin-top: auto; */
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto; */
+    width: 100%;
+    height: auto;
+}
+
+/* Base styling*/
+/* body {
+  background-color: lightgrey;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1em 0;
+} */
+
+/* Popover styling */
+
+a {
+  text-decoration: none;
+}
+
+.popover__title {
+  font-family: Myriad,Verdana,Arial; /*'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+  font-size: 18px;
+  line-height: 12px;
+  text-decoration: none;
+  color: rgb(228, 68, 68);
+  text-align: center;
+  padding: 15px 0;
+}
+
+.popover__wrapper {
+    position: fixed;
+    margin-top: 1.5rem;
+    display: inline-block;
+    width:auto;
+
+    /* -webkit-transition: width 2s, height 2s, -webkit-transform 2s;
+    transition: width 3s, height 3s, transform 3s; */
+}
+.popover__wrapper:hover{
+    position: fixed;
+    margin-top: 1.5rem;
+    display: inline-block;
+    
+    /* -webkit-transform: rotate(3600deg);
+    transform: rotateX(360deg); */
+}
+.popover__content {
+    opacity: 0.5;
+    visibility: hidden;
+    position: relative; 
+    /* left: -150px; */
+    transform: translate(0px,-400px);
+    background-color:rgba(198, 217, 218, 0.904);
+    padding: 2.9rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    width: auto;
+	height: auto;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+
+    
+}
+.popover__content:before {
+    position: relative;
+    z-index: -1;
+    content: '';
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #BFBFBF transparent;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    right: calc(50% - 10px);
+    top: -18px; 
+}
+.popover__wrapper:hover .popover__content {
+    z-index: 10;
+    opacity: 0.9;
+    visibility: visible;
+    transform: translate(0,-20px);
+    transition: all 1.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+    /* transition: all 5s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+    /* transition: all 2s cubic-bezier(0.785, 0.135, 0.15, 0.86); */
+    overflow: hidden;
+}
+.popover__message {
+    text-align: center;
+    font-family:Myriad,Verdana,Arial;
+    font-size:12px;
+    
+}
+.list{
+    font-family:Myriad,Verdana,Arial;
+    font-size:12px;
+    display:inline;
+    list-style-position: inside;
+    list-style-type: square;   
+}
+</style>
+</head>
+<body>
+  <!-- <div class="container-fluid"> -->
+
+      <img src="https://hive.springernature.com/resources/statics/356647/Screen%2BShot%2B2018-01-22%2Bat%2B11.58.53.png?a=1516628186468" alt="" usemap="#Map"/>
+      <map name="Map" id="Map" class="parent">
+          <area id="ca" shape="circle" alt="" data-toggle="popover" title="Canada" coords="112,174,55" href="#" target=""/> 
+          <area id="usa" shape="circle" alt="" data-toggle="popover" title="USA" coords="191,240,46" href="#" target="" />
+          <area id="latam" shape="circle" alt="" data-toggle="popover" title="LATAM - Mexico, Pero, Colombia and CASA Territories" coords="210,350,90" href="#" target="" />
+          <area id="sa" shape="circle" alt="" data-toggle="popover" title="South America" coords="250,470,65" href="#" target="" />
+          <area id="af" shape="circle" alt="" data-toggle="popover" title="Africa" coords="410,330,55" href="#" target="" />
+          <area id="za" shape="circle" alt="" data-toggle="popover" title="South Africa" coords="410,400,55" href="#" target="" />
+          <area id="uk" shape="circle" alt="" data-toggle="popover" title="UK" coords="380,190,25" href="#" target="" />
+          <area id="de" shape="circle" alt="" data-toggle="popover" title="DE" coords="420,190,25" href="#" target="" />
+          <area id="es" shape="circle" alt="" data-toggle="popover" title="ES" coords="350,220,25" href="#" target="" />
+          <area id="eu" shape="circle" alt="" data-toggle="popover" title="Europe" coords="476,190,45" href="#" target="" />
+          <area id="ru" shape="circle" alt="" data-toggle="popover" title="Russia" coords="610,200,75" href="#" target="" />
+          <area id="cn" shape="circle" alt="" data-toggle="popover" title="China" coords="496,257,55" href="#" target="" /> -->
+          <area id="in" shape="circle" alt="" data-toggle="popover" title="India" coords="741,450,55" href="#" target="" /> -->
+          <area id="jp" shape="circle" alt="" data-toggle="popover" title="Japan" coords="900,410,35" href="#" target="" />
+          <area id="au" shape="circle" alt="" data-toggle="popover" data-content = "Click for Contact Information" data-trigger="hover" title="Australia" coords="850,550,55" href="#" target="" />
+          
+          
+      </map>
+      
+       <!-- <div class="popover__wrapper" style="left:673px;top:422px;">
+          <a class="popover__wrapper" href="#" class="popover__title"><area id="au" shape="circle" alt="" coords="673,422,55" href="#" target="" /></a>
+          <div class="push popover__content">
+            <p class="popover__message">SEA and China<hr></p>
+              <ul class="list">
+              <li><a href="https://hive.springernature.com/people/arnout.jacobs@nature.com" target="_blank">Arnout Jacobs</a></li>
+              <li><a href="https://hive.springernature.com/people/sawluan.chua@springer.com" target="_blank">Bee Leng Chua</a></li>
+              <li><a href="https://hive.springernature.com/people/emma.bourne@macmillaneducation.com" target="_blank">Emma Bourne</a></li>
+              <li><a href="https://hive.springernature.com/people/jessica.zheng@springernature.com" target="_blank">Jessica Zheng</a></li>
+              <li><a href="https://hive.springernature.com/people/cedric.noeillac@springernature.com" target="_blank">Cedric Noeliac</a></li>
+              <li><a href="https://hive.springernature.com/people/maurice.kwong@springer.com" target="_blank">Maurice Kwong</a></li>
+              </ul>
+          </div>
+        </div>
+      
+       <div class="popover__wrapper" style="left:600px;top:210px;">
+         <a href="#" class="popover__title"><area id="jp" shape="circle" alt="" coords="900,410,35" href="#" target="" /></a>
+          <div class="push popover__content">
+            <p class="popover__message">Japan<hr></p>
+              <ul class="list">
+              <li><a href="https://hive.springernature.com/people/a.bocquet@nature.com" target="_blank"> Tony Bocquet </a> </li>
+              <li><a href="https://hive.springernature.com/people/maurice.kwong@springer.com" target="_blank"> Maurice Kwong </a> </li>
+              <li><a href="https://hive.springernature.com/people/cedric.noeillac@springernature.com" target="_blank"> Cedric Noeliac </a> </li>
+              <li><a href="https://hive.springernature.com/people/fukio.matsuda@springer.com" target="_blank"> Fukio Matsuda </a> </li>
+              <li><a href="https://hive.springernature.com/people/emma.bourne@macmillaneducation.com" target="_blank"> Emma Bourne</a> </li>
+              <li><a href="https://hive.springernature.com/people/jane.dale@springernature.com" target="_blank"> Jane Dale </a></li>
+              <li><a href="https://hive.springernature.com/people/katrin.stienemeier@springernature.com" target="_blank"> Katrin Stienemeier </a></li>
+              </ul>
+          </div>
+        </div>
+      
+        <div class="popover__wrapper" style="left:250px;top:370px;">
+         <a href="#" class="popover__title"><area id="in" shape="circle" alt="" coords="741,450,35" href="#" target="" /></a>
+          <div class="push popover__content">
+            <p class="popover__message">India<hr></p>
+              <ul class="list">
+              <li><a href="https://hive.springernature.com/people/sanjiv.goswami@springer.com" target="_blank"> Sanjiv Goswami </a> </li>
+              <li><a href="https://hive.springernature.com/people/emma.bourne@macmillaneducation.com" target="_blank"> Emma Bourne </a> </li>
+              <li><a href="https://hive.springernature.com/people/preeti.wadhawan@macmillan.co.in" target="_blank"> Preeti Wadhawan </a> </li>
+              <li><a href="https://hive.springernature.com/people/rajesh.pasari@macmillan.co.in" target="_blank"> Rajesh Pasari </a> </li>
+              <li><a href="https://hive.springernature.com/people/dayalu.subburayalu@springer.com" target="_blank"> Dayalu Subbaryu </a> </li>
+              <li><a href="https://hive.springernature.com/people/matthias.wissel@springer.com" target="_blank"> Matthias Wissel </a></li>
+              <li><a href="https://hive.springernature.com/people/bas.amesz@springernature.com" target="_blank"> Bas Amesz </a></li>
+              <li><a href="https://hive.springernature.com/people/maurice.kwong@springer.com" target="_blank"> Maurice Kwong </a></li>
+              </ul>
+          </div>
+        </div>
+      
+        <div class="popover__wrapper" style="left:110px;top:150px;">
+          <div class="push popover__content">
+            <p class="popover__message">South East Asia and China<hr></p>
+              <ul class="list">
+              <li><a href="https://hive.springernature.com/people/yvonne.su@springernature.com" target="_blank"> Yvonne Su </a> </li>
+              </ul>
+          </div>
+        </div>
+      
+        <div class="popover__wrapper" style="left:-120px;top:40px;">
+          <div class="push popover__content">
+            <p class="popover__message">Central Europe <hr></p>
+              <ul class="list">
+              <li><a href="https://hive.springernature.com/people/piotr.pich@macmillaneducation.com" target="_blank"> Piotr Pich </a> </li>
+              </ul>
+          </div>
+        </div>
+      
+        <div class="popover__wrapper" style="left:-500px;top:200px;">
+          <a href="#" class="popover__title"><area id="in" shape="circle" alt="" coords="741,450,35" href="#" target="" /></a>
+          <div class="push popover__content">
+            <p class="popover__message">Iberia<hr></p>
+              <ul class="list">
+              <li><a href="https://hive.springernature.com/people/marta.martinez@macmillaneducation.com" target="_blank"> Marta Martinez </a> </li>
+              <li><a href="https://hive.springernature.com/people/javier.cazana@macmillaneducation.com" target="_blank"> Javier Cazaña </a> </li>
+              <li><a href="https://hive.springernature.com/people/ignacio.lopez@macmillaneducation.com" target="_blank"> Ignacio Lopez </a> </li>
+              <li><a href="https://hive.springernature.com/people/lola.luengo%40macmillaneducation.com" target="_blank"> Lola Luengo </a> </li>
+              <li><a href="https://hive.springernature.com/people/isabel.castillo@macmillaneducation.com" target="_blank"> Isabel Castillo </a> </li>
+              <li><a href="https://hive.springernature.com/people/jesus.ahumada@springer.com" target="_blank"> Jesus Ahumada </a></li>
+              <li><a href="https://hive.springernature.com/people/josemaria.balboa@macmillaneducation.com" target="_blank"> Jose Maria Balboa </a></li>
+              <li><a href="https://hive.springernature.com/people/carmen.ardura@macmillaneducation.com" target="_blank"> Carmen Ardura </a></li>
+              <li><a href="https://hive.springernature.com/people/fernando.rastrollo@macmillaneducation.com" target="_blank"> Fernando Rastrollo </a></li>
+              </ul>
+          </div>
+        </div>
+      
+        <div class="popover__wrapper" style="left:400px;top:-260px;">
+          <div class="push popover__content">
+            <p class="popover__message">European territories<hr></p>
+              <ul class="list">
+              <li><a href="https://hive.springernature.com/people/thomas.thiekoetter@springer.com" target="_blank"> Thomas Thiekotter </a> </li>
+              </ul>
+          </div>
+        </div>
+      
+        <div class="popover__wrapper" style="left:40px;top:110px;">
+          <div class="push popover__content">
+            <p class="popover__message">Southern Cone<hr></p>
+              <ul class="list">
+              <li><a href="https://hive.springernature.com/people/acacio.queiroz@macmillaneducation.com" target="_blank"> Acacio Queiroz </a> </li>
+              </ul>
+          </div>
+        </div>
+      
+        <div class="popover__wrapper" style="left:-200px;top:-30px;">
+          <div class="push popover__content">
+            <p class="popover__message">Northern Cone<hr></p>
+              <ul class="list">
+              <li><a href="https://hive.springernature.com/people/alfredo.echeverria@macmillaneducation.com" target="_blank"> Alfredo Echeverria </a> </li>
+              </ul>
+          </div>
+        </div>
+      
+        <div class="popover__wrapper" style="left:-450px;top:-220px;">
+          <div class="push popover__content">
+            <p class="popover__message">USA<hr></p>
+              <ul class="list">
+              <li><a href="https://hive.springernature.com/people/william.curtis@springer.com" target="_blank"> William Curtis </a> </li>
+              <li><a href="https://hive.springernature.com/people/d.sanderson@us.nature.com" target="_blank"> Dean Sanderson </a> </li>
+              <li><a href="https://hive.springernature.com/people/michael.elf@springernature.com" target="_blank"> Michael Elf </a> </li>
+              <li><a href="https://hive.springernature.com/people/eileen.purelis@springer.com" target="_blank"> Eileen Purelis </a> </li>
+              <li><a href="https://hive.springernature.com/people/ned.woods@springer.com" target="_blank"> Ned Woods </a> </li>
+              <li><a href="https://hive.springernature.com/people/heath.wagenheim@springernature.com" target="_blank"> Heath Wagenheim </a> </li>
+              </ul>
+          </div>
+        </div> 
+      
+        <div class="popover__wrapper" style="left:-260px;top:100px;">
+          <div class="push popover__content">
+            <p class="popover__message">Southern Africa<hr></p>
+              <ul class="list">
+              <li><a href="https://hive.springernature.com/people/lindiwe.vundla@macmillaneducation.co.za" target="_blank"> Lindi Vundla </a> </li>
+              </ul>
+          </div>
+        </div>-->
+      
+  <!-- </div> -->
+  
+<script>
+  imageMapResize();
+</script>
+<script>
+  $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();   
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <!-- <script src="imageMapResizer.min.js"></script> -->
+
+<style>
+img{
+    /* position: fixed;
+    left: 100px;
+    margin-top: auto; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+img{
+    position:fixed;
+    /* left:100px; */
+    width: 100%;
+    height: auto;
+}
+</style>
+</head>
+<body>
+    <img src="https://hive.springernature.com/resources/statics/356647/Screen%2BShot%2B2018-01-22%2Bat%2B11.58.53.png?a=1516628186468" alt="" usemap="#Map"/>
+    <map name="Map" id="Map" class="parent">
+        <area id="ca" shape="circle" alt="" data-toggle="popover" title="Canada" coords="112,174,55" href="#" target=""/> 
+        <area id="usa" shape="circle" alt="" data-toggle="popover" title="USA" coords="191,240,46" href="#" target="" />
+        <area id="latam" shape="circle" alt="" data-toggle="popover" title="LATAM - Mexico, Pero, Colombia and CASA Territories" coords="210,350,90" href="#" target="" />
+        <area id="sa" shape="circle" alt="" data-toggle="popover" title="South America" coords="250,470,65" href="#" target="" />
+        <area id="af" shape="circle" alt="" data-toggle="popover" title="Africa" coords="410,330,55" href="#" target="" />
+        <area id="za" shape="circle" alt="" data-toggle="popover" title="South Africa" coords="410,400,55" href="#" target="" />
+        <area id="uk" shape="circle" alt="" data-toggle="popover" title="UK" coords="380,190,25" href="#" target="" />
+        <area id="de" shape="circle" alt="" data-toggle="popover" title="DE" coords="420,190,25" href="#" target="" />
+        <area id="es" shape="circle" alt="" data-toggle="popover" title="ES" coords="350,220,25" href="#" target="" />
+        <area id="eu" shape="circle" alt="" data-toggle="popover" title="Europe" coords="476,190,45" href="#" target="" />
+        <area id="ru" shape="circle" alt="" data-toggle="popover" title="Russia" coords="610,200,75" href="#" target="" />
+        <area id="cn" shape="circle" alt="" data-toggle="popover" title="China" coords="496,257,55" href="#" target="" />
+        <area id="in" shape="circle" alt="" data-toggle="popover" title="India" coords="741,450,55" href="#" target="" />
+        <area id="jp" shape="circle" alt="" data-toggle="popover" title="Japan" coords="900,410,35" href="#" target="" />
+        <area id="au" shape="circle" alt="" data-toggle="popover" title="Australia" coords="850,550,55" href="#" target="" />
+    </map>
+      
+    <div id="aum" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h4>Australia</h4>
+            <p>Spain Rep</p>
+        </div>
+    </div>
+  
+<script>
+// Get the modal_canada
+var modal_au = document.getElementById('aum');
+// Get the button that opens the modal_canada
+var btn_au = document.getElementById("au");
+// Get the <span> element that closes the modal_canada
+var span_au = document.getElementsByClassName("close")[0];
+// When the user clicks the button, open the modal_canada 
+btn_au.onclick = function() {
+    modal_au.style.display = "block";
+    if(modal_au.display!="none"){
+        modal_au.style.display="none";
+    }
+}
+// When the user clicks on <span> (x), close the modal_canada
+span_au.onclick = function() {
+    modal_au.style.display = "none";
+}
+
+  
+
+// // When the user clicks anywhere outside of the modal_canada, close it
+window.onclick = function(event) {
+    // if (event.target == modal_canada) {
+    //     modal_canada.style.display = "none";
+    // }
+    // if (event.target == modal_usa) {
+    //     modal_usa.style.display = "none";
+    // }
+    // if (event.target == modal_sa) {
+    //     modal_sa.style.display = "none";
+    // }
+    // if (event.target == modal_af) {
+    //     modal_af.style.display = "none";
+    // }
+    // if (event.target == modal_za) {
+    //     modal_za.style.display = "none";
+    // }
+    // if (event.target == modal_uk) {
+    //     modal_uk.style.display = "none";
+    // }
+    // if (event.target == modal_de) {
+    //     modal_de.style.display = "none";
+    // }
+    // if (event.target == modal_es) {
+    //     modal_es.style.display = "none";
+    // }
+    if (event.target == modal_au) {
+        modal_au.style.display = "none";
+    }
+}
+
+
+
+
+  </script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="imageMapResizer.min.js"></script>
+  <script>
+  imageMapResize();
+  $(document).ready(function() {
+  $("#au").popover({
+    placement: 'right',
+    trigger: 'hover',
+    width: '500px',
+    content: "Click on country for contact information"
+  });
+});
+  </script>
+</body>
+</html>

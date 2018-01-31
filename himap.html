@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+    <script src="resize.js"></script> -->
+    
+    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
     
 <style>
 /* The Modal (background) */
@@ -46,7 +48,9 @@
 }
 img{
     position:fixed;
-    left:100px;
+    /* left:100px; */
+    width: 100%;
+    height: auto;
 }
 
 /* Base styling*/
@@ -96,7 +100,7 @@ a {
     left: -150px;
     transform: translate(0,100px);
     background-color:#BFBFBF;
-    padding: 2.9rem;
+    padding: 3.9rem;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     width: auto;
 	height: auto;
@@ -137,19 +141,16 @@ a {
     font-size:12px;
     display:inline;
     list-style-position: inside;
-    list-style-type: square;
-   
-    /* background: #3399ff; */
-    
+    list-style-type: square;   
 }
 
 
 </style>
 </head>
 <body>
-<img src="https://hive.springernature.com/resources/statics/356647/worldMap.jpg?a=1515099960442" alt="" usemap="#Map"/>
-<map name="Map" id="Map" class="parent">
-    <area id="ca" shape="circle" alt="" data-toggle="popover" title="Canada" coords="112,174,55" href="#" target=""/> 
+<img src="https://hive.springernature.com/resources/statics/356647/Screen%2BShot%2B2018-01-22%2Bat%2B11.58.53.png?a=1516628186468" alt="" usemap="#Map" width="100%"/>
+<map name="Map" id="Map">
+    <!-- <area id="ca" shape="circle" alt="" data-toggle="popover" title="Canada" coords="112,174,55" href="#" target=""/> 
     <area id="usa" shape="circle" alt="" data-toggle="popover" title="USA" coords="191,240,46" href="#" target="" />
     <area id="latam" shape="circle" alt="" data-toggle="popover" title="LATAM - Mexico, Pero, Colombia and CASA Territories" coords="210,350,90" href="#" target="" />
     <area id="sa" shape="circle" alt="" data-toggle="popover" title="South America" coords="250,470,65" href="#" target="" />
@@ -162,28 +163,57 @@ a {
     <area id="ru" shape="circle" alt="" data-toggle="popover" title="Russia" coords="610,200,75" href="#" target="" />
     <area id="cn" shape="circle" alt="" data-toggle="popover" title="China" coords="496,257,55" href="#" target="" />
     <area id="in" shape="circle" alt="" data-toggle="popover" title="India" coords="541,301,55" href="#" target="" />
-    <area id="jp" shape="circle" alt="" data-toggle="popover" title="Japan" coords="681,248,35" href="#" target="" />
-    <!-- <area id="au" shape="circle" alt="" data-toggle="popover" title="Australia" coords="673,422,55" href="#" target="" /> -->
+    <area id="jp" shape="circle" alt="" data-toggle="popover" title="Japan" coords="900,410,35" href="#" target="" />
+    <area id="au" shape="circle" alt="" data-toggle="popover" title="Australia" coords="850,550,55" href="#" target="" /> -->
 
-    <div class="popover__wrapper" style="left:783px;top:250px;">
-        <a href="#" class="popover__title"><area id="au" shape="circle" alt="" coords="673,422,55" href="#" target="" />
-        </a>
-        <div class="push popover__content">
-          <p class="popover__message">SEA and China<hr></p>
-            <ul class="list">
-            <li><a href="https://hive.springernature.com/people/arnout.jacobs@nature.com" target="_blank">Arnout Jacobs</a></li>
-            <li>Bee Leng Chua</li>
-            <li>Emma Bourne</li>
-            <li>Jessica Zheng</li>
-            <li>Cedric Noeliac</li>
-            <li>Maurice Kwong</li>
-            </ul>
-          
-        </div>
-      </div>
-
+    <area id="ca" alt="" data-toggle="popover" title="Canada" href="#" shape="poly" coords="129,334,212,335,230,339,242,346,245,364,285,344,327,344,320,318,296,281,304,236,183,106,37,199,7,221,3,245,6,279,13,308" />
+    <area id="usa" alt="" data-toggle="popover" title="USA" href="#" shape="poly" coords="149,396,166,401,179,399,186,408,192,406,199,416,205,419,206,412,216,407,241,403,252,420,312,346,286,346,208,337,128,336,126,370" />
+    <area alt="" data-toggle="popover" title="NCone" href="#" shape="poly" coords="250,472,207,448,185,439,171,429,156,414,150,400,166,404,179,401,205,421,233,433" />
+    <area alt="" data-toggle="popover" title="NCone" href="#" shape="poly" coords="277,458,291,467,269,464,263,471,252,492,249,508,267,533,285,536" />
+    <area alt="" data-toggle="popover" title="SCone" href="#" shape="poly" coords="267,536,281,548,273,611,266,653,271,672,283,688,293,684,292,651,361,563,383,518,336,487,308,467,279,470" />
+    <area alt="" data-toggle="popover" title="Central Europe" href="#" shape="poly" coords="520,310,524,326,535,333,546,334,562,350,570,345,579,352,588,343,596,356,618,365,614,354,626,344,631,351,626,355,632,364,642,365,640,351,648,350,658,358,667,357,671,367,682,361,709,362,709,354,716,351,716,341,723,342,730,334,749,327,758,331,759,325,763,321,771,323,774,328,781,329,790,332,800,334,807,329,813,330,817,333,824,322,824,317,835,315,845,330,855,339,864,337,860,350,855,358,860,360,881,336,887,318,866,310,886,287,901,285,907,281,913,287,921,286,919,281,928,269,935,270,936,276,943,272,947,265,948,274,928,294,926,301,928,323,945,299,940,291,950,280,956,281,960,276,964,279,985,265,990,266,988,257,985,253,990,253,995,247,1003,247,1013,254,1022,243,1013,237,981,212,946,215,936,214,936,207,928,203,907,197,892,188,847,198,834,178,796,178,788,179,807,159,796,144,776,134,682,186" />
+    <area alt="" data-toggle="popover" title="S Africa" href="#" shape="poly" coords="536,599,562,599,561,592,569,584,575,574,583,566,580,554,575,546,568,539,548,526,514,531,512,548" />
+    <area alt="" data-toggle="popover" title="Iberia and Turkey" href="#" shape="poly" coords="576,385,579,381,585,383,607,381,607,372,620,374,622,366,599,362,578,364,566,368,559,363,564,350,536,335,520,348,546,382" />
+    <area alt="" data-toggle="popover" title="India" href="#" shape="poly" coords="702,472,708,467,708,451,734,433,732,419,696,397,689,410,680,413,682,424,678,427" />
+    <area alt="" data-toggle="popover" title="Ex Springer European Territories" href="#" shape="poly" coords="476,356,488,363,498,357,527,345,534,334,524,326,521,312,506,306,469,335" />
+    <area alt="" data-toggle="popover" title="Iberia" href="#" shape="poly" coords="465,386,477,381,488,365,476,358,456,355,455,374,458,382" />
+    <area alt="" data-toggle="popover" title="Japan" href="#" shape="poly" coords="883,352,895,357,882,386,853,398" />
+    <area alt="" data-toggle="popover" title="SEA China" href="#" shape="poly" coords="696,380,700,397,731,414,752,449,756,482,783,514,810,518,832,492,844,476,826,422,828,402,855,386,844,373,855,358,864,340,853,336,783,362,798,358,821,347,759,360,738,358,719,363" />
+    <area alt="" data-toggle="popover" title="Australia" href="#" shape="poly" coords="817,603,824,597,834,599,842,592,855,590,867,601,899,633,920,582,884,525,859,528,842,535,803,560,809,598" />
+    <area alt="" data-toggle="popover" title="UK" href="#" shape="poly" coords="472,329,486,320,469,290,461,295" />
+    <area alt="" data-toggle="popover" title="Iraq Iran" href="#" shape="poly" coords="590,394,606,407,615,409,621,405,638,419,657,422,659,414,655,408,654,397,655,386,644,378,620,381,617,374,607,372" />
+    <area alt="" data-toggle="popover" title="N Africa" href="#" shape="poly" coords="517,512,529,512,533,519,543,515,546,527,568,518,593,515,627,461,605,464,577,415,579,401,550,399,542,394,537,402,512,395,507,381,485,383,474,389,464,387,454,400,432,430,430,450,457,481" />
+    <area alt="" data-toggle="popover" title="S Arabia" href="#" shape="poly" coords="606,458,629,453,653,433,641,421,632,425,617,410,592,399,580,405" />
+    <area alt="" data-toggle="popover" title="Scandenavia" href="#" shape="poly" coords="522,302,598,234,561,202,524,219,490,272" />
+    <area alt="" data-toggle="popover" title="New Zealand" href="#" shape="poly" coords="946,613,975,600,987,621,966,643,962,646,957,643" />
+    
 </map>
 
+<!-- <img src="url/to/your/image.jpg" alt="" usemap="#Map" />
+<map name="Map" id="Map">
+    <area alt="" title="Canada" href="#" shape="poly" coords="129,334,212,335,230,339,242,346,245,364,285,344,327,344,320,318,296,281,304,236,183,106,37,199,7,221,3,245,6,279,13,308" />
+    <area alt="" title="USA" href="#" shape="poly" coords="149,396,166,401,179,399,186,408,192,406,199,416,205,419,206,412,216,407,241,403,252,420,312,346,286,346,208,337,128,336,126,370" />
+    <area alt="" title="NCone" href="#" shape="poly" coords="250,472,207,448,185,439,171,429,156,414,150,400,166,404,179,401,205,421,233,433" />
+    <area alt="" title="NCone" href="#" shape="poly" coords="277,458,291,467,269,464,263,471,252,492,249,508,267,533,285,536" />
+    <area alt="" title="SCone" href="#" shape="poly" coords="267,536,281,548,273,611,266,653,271,672,283,688,293,684,292,651,361,563,383,518,336,487,308,467,279,470" />
+    <area alt="" title="Central Europe" href="#" shape="poly" coords="520,310,524,326,535,333,546,334,562,350,570,345,579,352,588,343,596,356,618,365,614,354,626,344,631,351,626,355,632,364,642,365,640,351,648,350,658,358,667,357,671,367,682,361,709,362,709,354,716,351,716,341,723,342,730,334,749,327,758,331,759,325,763,321,771,323,774,328,781,329,790,332,800,334,807,329,813,330,817,333,824,322,824,317,835,315,845,330,855,339,864,337,860,350,855,358,860,360,881,336,887,318,866,310,886,287,901,285,907,281,913,287,921,286,919,281,928,269,935,270,936,276,943,272,947,265,948,274,928,294,926,301,928,323,945,299,940,291,950,280,956,281,960,276,964,279,985,265,990,266,988,257,985,253,990,253,995,247,1003,247,1013,254,1022,243,1013,237,981,212,946,215,936,214,936,207,928,203,907,197,892,188,847,198,834,178,796,178,788,179,807,159,796,144,776,134,682,186" />
+    <area alt="" title="S Africa" href="#" shape="poly" coords="536,599,562,599,561,592,569,584,575,574,583,566,580,554,575,546,568,539,548,526,514,531,512,548" />
+    <area alt="" title="Iberia and Turkey" href="#" shape="poly" coords="576,385,579,381,585,383,607,381,607,372,620,374,622,366,599,362,578,364,566,368,559,363,564,350,536,335,520,348,546,382" />
+    <area alt="" title="India" href="#" shape="poly" coords="702,472,708,467,708,451,734,433,732,419,696,397,689,410,680,413,682,424,678,427" />
+    <area alt="" title="Ex Springer European Territories" href="#" shape="poly" coords="476,356,488,363,498,357,527,345,534,334,524,326,521,312,506,306,469,335" />
+    <area alt="" title="Iberia" href="#" shape="poly" coords="465,386,477,381,488,365,476,358,456,355,455,374,458,382" />
+    <area alt="" title="Japan" href="#" shape="poly" coords="883,352,895,357,882,386,853,398" />
+    <area alt="" title="SEA China" href="#" shape="poly" coords="696,380,700,397,731,414,752,449,756,482,783,514,810,518,832,492,844,476,826,422,828,402,855,386,844,373,855,358,864,340,853,336,783,362,798,358,821,347,759,360,738,358,719,363" />
+    <area alt="" title="Australia" href="#" shape="poly" coords="817,603,824,597,834,599,842,592,855,590,867,601,899,633,920,582,884,525,859,528,842,535,803,560,809,598" />
+    <area alt="" title="UK" href="#" shape="poly" coords="472,329,486,320,469,290,461,295" />
+    <area alt="" title="Iraq Iran" href="#" shape="poly" coords="590,394,606,407,615,409,621,405,638,419,657,422,659,414,655,408,654,397,655,386,644,378,620,381,617,374,607,372" />
+    <area alt="" title="N Africa" href="#" shape="poly" coords="517,512,529,512,533,519,543,515,546,527,568,518,593,515,627,461,605,464,577,415,579,401,550,399,542,394,537,402,512,395,507,381,485,383,474,389,464,387,454,400,432,430,430,450,457,481" />
+    <area alt="" title="S Arabia" href="#" shape="poly" coords="606,458,629,453,653,433,641,421,632,425,617,410,592,399,580,405" />
+    <area alt="" title="Scandenavia" href="#" shape="poly" coords="522,302,598,234,561,202,524,219,490,272" />
+    <area alt="" title="New Zealand" href="#" shape="poly" coords="946,613,975,600,987,621,966,643,962,646,957,643" />
+
+</map> -->
+  
 <!-- The modal_canada -->
 <div id="canada" class="modal">
     <!-- modal_canada content -->
@@ -250,6 +280,14 @@ a {
     </div>
 </div>
 
+<div id="aum" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>Australia</h4>
+        <p>Spain Rep</p>
+    </div>
+</div>
+
 <script>
 // Get the modal_canada
 var modal_canada = document.getElementById('canada');
@@ -269,15 +307,6 @@ span_canada.onclick = function() {
     modal_canada.style.display = "none";
 }
 
-// $(document).ready(function() {
-//   $('[data-toggle="popover"]').popover({
-//     placement: 'right',
-//     trigger: 'hover',
-//     width: '500px',
-//     content:'Click region for contact information'
-//   });
-// });
-
 // Get the modal_usa
 var modal_usa = document.getElementById('usam');
 // Get the button that opens the modal_usa
@@ -291,12 +320,11 @@ btn_usa.onclick = function() {
         modal_canada.style.display="none";
     }
 }
-
-
 // When the user clicks on <span> (x), close the modal_usa
 span_usa.onclick = function() {
     modal_usa.style.display = "none";
 }
+
 // Get the modal_South Africa
 var modal_sa = document.getElementById('sam');
 // Get the button that opens the modal_usa
@@ -387,6 +415,24 @@ span_es.onclick = function() {
     modal_es.style.display = "none";
 }
 
+// Get the modal_canada
+var modal_au = document.getElementById('aum');
+// Get the button that opens the modal_canada
+var btn_au = document.getElementById("au");
+// Get the <span> element that closes the modal_canada
+var span_au = document.getElementsByClassName("close")[8];
+// When the user clicks the button, open the modal_canada 
+btn_au.onclick = function() {
+    modal_au.style.display = "block";
+    if(modal_au.display!="none"){
+        modal_au.style.display="none";
+    }
+}
+// When the user clicks on <span> (x), close the modal_canada
+span_au.onclick = function() {
+    modal_au.style.display = "none";
+}
+
 // // When the user clicks anywhere outside of the modal_canada, close it
 window.onclick = function(event) {
     if (event.target == modal_canada) {
@@ -413,10 +459,27 @@ window.onclick = function(event) {
     if (event.target == modal_es) {
         modal_es.style.display = "none";
     }
+    if (event.target == modal_au) {
+        modal_au.style.display = "none";
+    }
 }
 
-
 </script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="imageMapResizer.min.js"></script>
+<script type="text/javascript">
 
+    $('map').imageMapResize();
+
+    $(document).ready(function() {
+    $('[data-toggle="popover"]').popover({
+        placement: 'right',
+        trigger: 'hover',
+        width: '500px',
+        content:'Click region for contact information'
+    });
+});
+</script>
 </body>
 </html>
